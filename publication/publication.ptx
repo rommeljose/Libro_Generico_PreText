@@ -41,8 +41,8 @@
     <asymptote links="no" />
     <worksheets formatted="yes" />
     <cover
-      front="imagenes/LCA.jpg"
-      back="imagenes/emigracion_a_oriente_tito_salas.jpg"
+      front="imagenes/caratula.png"
+      back="imagenes/contra_caratula.png"
     />
   </latex>
 
