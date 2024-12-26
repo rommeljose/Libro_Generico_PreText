@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ********************************************************************
+	Título del Libro: "Título del Libro"
+
+
+	Copyright (C) 2023   rommel Contreras ( rommeljose@gmail.com )
+
+	********************************************************************
+
+	Este es el archivo del "backmater.ptx" del libro
+
+	******************************************************************** -->
+
+<backmatter xml:id="backmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+	<xi:include href="./bibliografia.ptx" />           <!-- Referencias Bibliográficas-->
+
+	<!-- 	<index>
+		<index-list />
+	</index> -->
+
+	<!-- Index follows appendices, preceded only colophon -->
+
+	<colophon>
+		<p>Este libro fué reescrito en <url
+				visual="https://es.wikipedia.org/wiki/Extensible_Markup_Language">XML</url>
+			<em>(eXtensible
+			Markup Language)</em>; un meta-lenguaje que permite definir lenguajes de marcas;
+			desarrollado por el World Wide Web Consortium (<url visual="https://www.w3c.es/">W3C</url>).
+			Utilizando <url visual="https://notepad-plus-plus.org/">Notepad ++</url> un editor de
+			código fuente (Software Libre; licencia GPL), y editado para su publicación con <url
+				visual="https://pretextbook.org/">
+				<pretext />
+			</url>; un vocabulario XML para documentos académicos; con <em>
+				<pretext />
+			</em> se puede describir el contenido y la estructura de un
+			libro de texto, monografía o artículo académico (Software Libre; licencia GPL). Se
+			utilizó como sistema operativo el Subsistema Linux en Windows <url
+				visual="https://learn.microsoft.com/en-us/windows/wsl/install">(WSL 2)</url>; un
+			entorno GNU/Linux en Windows.</p>
+		<p>Nota:<em>Todas las marcas registradas <trademark /> son las marcas registradas <registered />
+			de sus respectivos propietarios.</em></p>
+		<p>
+			<m>\;</m>
+		</p>
+		<p>
+			<m>\;</m>
+		</p>
+		<p><copyright />NOMBRE DEL AUTOR; <date>
+				<today />
+			</date>.<m>\;</m></p>
+		<p>
+			<m>\;</m>
+		</p>
+
+		<minilicense>Todos los derechos reservados. </minilicense>
+		<p>
+			<m>\;</m>
+		</p>
+		<p><m>\;</m>CIUDAD DE PUBLICACIÓN.</p>
+		<p>PAÍS DE PUBLICACIÓN.</p>
+	</colophon>
+
+</backmatter>

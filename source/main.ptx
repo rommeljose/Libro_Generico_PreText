@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<pretext xml:lang="es-ES" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <docinfo>
+    <macros>
+      \newcommand{\R}{\mathbb R}
+      \newcommand{\identity}{\mathrm{id}}
+      \newcommand{\notdivide}{{\not{\mid}}}
+      \newcommand{\notsubset}{\not\subset}
+      \newcommand{\lcm}{\operatorname{lcm}}
+      \newcommand{\gf}{\operatorname{GF}}
+      \newcommand{\inn}{\operatorname{Inn}}
+      \newcommand{\aut}{\operatorname{Aut}}
+      \newcommand{\Hom}{\operatorname{Hom}}
+      \newcommand{\cis}{\operatorname{cis}}
+      \newcommand{\chr}{\operatorname{char}}
+      \newcommand{\Null}{\operatorname{Null}}
+    </macros>
+
+    <!-- <latex-image-preamble> -->
+    <!-- \usepackage{tikz} -->
+    <!-- </latex-image-preamble> -->
+
+    <brandlogo url="https://blog.cenitlab.com/" source="./imagenes/logo_blog_autor.png" />
+
+    <cross-references text="type-global" />
+  </docinfo>
+
+  <book xml:id="titulo-libro">
+    <title>TÍTULO DEL LIBRO</title>
+    <subtitle>Sub título del libro</subtitle>
+
+    <!-- Title Page, Preface, etc. -->
+    <xi:include href="./frontmatter.ptx" />
+
+
+    <xi:include href="./Capitulo_1.ptx" />
+    <!-- <xi:include href="./Capitulo_2.ptx" /> -->
+    <!-- <xi:include href="./Conclusion.ptx" /> -->
+
+    <!-- GFDL, Hints, Notation -->
+    <xi:include href="./backmatter.ptx" />
+
+  </book>
+</pretext>

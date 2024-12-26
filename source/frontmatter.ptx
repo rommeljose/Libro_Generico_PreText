@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ********************************************************************
+	Titulo del libro: TITULO DEL LIBRO                           
+	               
+
+	Copyright (C) 2024   rommel Contreras (rommeljose@gmail.com )
+
+	********************************************************************
+	Este es el archivo del "frontmatter.xml" del libro
+
+	******************************************************************** -->
+
+
+<frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <bibinfo>
+
+        <author>
+            <personname>NOMBRE DEL AUTOR</personname>
+            <institution>INSTITUCIÓN O UNIVERSIDAD</institution>
+            <email>CORREO@ELECTRONICO</email>
+        </author>
+
+        <editor>
+            <personname>INICIALES DEL AUTOR</personname>
+            <institution>INICIALES DE LA INSTITUCIÓN</institution>
+        </editor>
+
+        <date> FECHA DE PUBLICACIÓN </date>
+
+        <credit>
+            <role>Diseño de la Portada</role>
+            <entity>Nombre Diseñador Portada</entity>
+        </credit>
+        <credit>
+            <role>Editor Productor</role>
+            <entity>Nombre del Editor del Libro</entity>
+        </credit>
+
+        <edition>1<m>^\mathrm{ra}</m> edición digital, 20XX</edition>
+
+        <website>
+            <url href="https://pagina.web.del.libro.com"
+                visual="pagina_web_libro.blogspot.com"></url>
+        </website>
+
+        <copyright>
+            <year>20xx</year>
+
+            <!-- Libro impreso -->
+            <!-- <holder>Hecho el Depósito de Ley: SU2024xxxxxx / ISBN: 978-980-18-xxxx-0</holder> -->
+
+            <!-- Libro digital html -->
+            <holder>Hecho el Depósito de Ley: SU2024xxxxxx / ISBN: 978-980-18-xxxx-0</holder>
+
+
+            <minilicense>Todos los Derechos Reservados</minilicense>
+            <!-- <minilicense>Creative Commons BY-SA-NC</minilicense> -->
+            <!-- BY) derivative work must make clear the contribution of the original author.-->
+            <!-- SA) derivative work must be licensed with the same license as the original.-->
+            <!-- NC) Non-Commercial; not allow the sale of copies.-->
+        </copyright>
+    </bibinfo>
+
+    <!-- Debe contener un único elemento vacío <titlepage-items/>que recopilará los elementos
+    apropiados <bibinfo>para generar una página de título. -->
+    <titlepage>
+        <titlepage-items></titlepage-items>
+    </titlepage>
+
+    <!-- Es necesario para que aparezca el colofon en la página Web -->
+    <!-- El elemento obligatorio <colophon> con el elemento vacío <colophon-items/>, que traerá
+    automáticamente los elementos apropiados de <bibinfo> -->
+    <colophon>
+        <colophon-items></colophon-items>
+    </colophon>
+
+
+    <!-- A section of its own in HTML, migrates to copyright-page in LaTeX -->
+    <!-- Titles are optional, presumably none for single author,           -->
+    <!-- or for every author, even if we test a mix here                   -->
+    <biography xml:id="biografia-autor">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.</p>
+        <p> </p>
+    </biography>
+
+    <!-- The following items must be placed in the desired/required order -->
+    <!-- This will be checked by a Document Type Definition eventually -->
+    <!-- Order: dedication, acknowledgements, forewords, prefaces -->
+
+    <!-- Each paragraph gets centered and has some vertical separatation -->
+    <!-- A line element may be used here with a single paragraph   -->
+    <dedication xml:id="dedicatoria">
+        <p>
+            <line>
+                <em>TEXTO DE LA DEDICATORIA</em>
+            </line>
+        </p>
+
+        <p> </p>
+
+    </dedication>
+
+    <acknowledgement xml:id="reconocimiento">
+
+        <p>TEXTO DE LOS RECONOCIMIENTOS</p>
+
+    </acknowledgement>
+
+	<preface xml:id="prologo">
+        <title>Título del Prólogo</title>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.</p>
+    </preface>
+
+    <preface xml:id="presentacion">
+        <title>Titulo de la presentación</title>
+
+        <p><term>Nombre de Autor</term>:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.</p>
+
+        <attribution>
+            <line> </line>
+            <line> </line>
+            <line>Nombre aurtor presentación</line>
+            <line>Mes 20xx</line>
+        </attribution>
+
+    </preface>
+
+</frontmatter>

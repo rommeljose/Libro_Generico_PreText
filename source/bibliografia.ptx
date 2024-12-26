@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ********************************************************************
+	Título del Libro: "TÍTULO DEL LIBRO"                           
+	               
+
+	Copyright (C) 2023   rommel Contreras (	rommeljose@gmail.com )
+	********************************************************************
+
+	Este es el archivo de la "bibliografia.xml" del libro
+
+	******************************************************************** -->
+
+<!-- Ejemplos de referncias bibliográficas -->
+
+<references>
+	<title>Bibliografía:</title>
+	
+	<biblio type="raw" xml:id="sender_0"> Sender, Ramón J. <title>Proclamación de la sonrisa.</title>
+				<pubtitle>Impr.
+		Juan Pueyo. Madrid</pubtitle>. <date>1934</date>. </biblio>
+
+	<biblio type="raw" xml:id="casas_1"> Casas, Fray Bartolomé de las. <title>Historia General de
+		las Indias.</title>
+				<pubtitle>Editado por Archivo General de Indias. copia manuscrita del
+		original (Chiapas: AGI, 1527-1561)</pubtitle>. <date>1561?</date>. </biblio>	
+</references>
+
