@@ -126,6 +126,7 @@ sudo apt-get install texlive-fonts-recommended
 sudo apt-get install texlive-fonts-extra
 sudo apt-get install texlive-science
 sudo apt-get install texlive-latex-extra
+sudo apt install texlive-xetex
 ```
 
 ### Recursos Útiles:
