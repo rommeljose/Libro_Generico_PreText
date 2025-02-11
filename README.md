@@ -126,8 +126,50 @@ sudo apt-get install texlive-fonts-recommended
 sudo apt-get install texlive-fonts-extra
 sudo apt-get install texlive-science
 sudo apt-get install texlive-latex-extra
-sudo apt install texlive-xetex
 ```
+
+## Nota 1
+`Polyglossia` es la alternativa a babel para `XeLaTeX` y maneja correctamente la separación de palabras en español
+Para usar `XeLaTeX` es necesario instalar además de los Paquetes Básicos:
+
+```bash
+sudo apt install texlive-xetex
+sudo apt install texlive-xetex texlive-lang-spanish
+```
+
+## Nota 2
+Verifica que `polyglossia` esté instalado ejecutando el siguiente comando:
+
+```bash
+kpsewhich polyglossia.sty
+```
+
+## Nota 3
+Para que `XeLaTeX` maneje correctamente el idioma español, debes asegurarte de que `polyglossia` esté correctamente configurado.
+En el archivo `main.tex` generado por **PreTeXt** y busca la sección donde se incluyen los paquetes. Justo después de `\documentclass{book}`, agrega o modifica las siguientes líneas:
+
+```bash
+\usepackage{polyglossia}  % Activa soporte de idiomas en XeLaTeX
+\setmainlanguage{spanish}  % Define el idioma principal como español
+
+% Configurar fuentes con fontspec (Solo funciona con XeLaTeX o LuaLaTeX)
+\usepackage{fontspec}  
+\setmainfont[
+    Path=/usr/share/fonts/opentype/cabin/,  % Ruta donde está la fuente
+    Extension=.otf,  % Tipo de archivo de la fuente
+    UprightFont=*-Regular,  
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic
+]{Cabin}
+
+% Evitar errores de separación de palabras (puedes agregar más si es necesario)
+\hyphenation{re-pú-blica in-de-pen-den-cia Li-ber-ta-dor es-pa-ñol}
+
+% Asegurar que XeLaTeX interprete bien los acentos y caracteres especiales
+\defaultfontfeatures{Ligatures=TeX}
+```
+
 
 ### Recursos Útiles:
 - [**How To Install "texlive-latex-base" Package on Ubuntu**](https://zoomadmin.com/HowToInstall/UbuntuPackage/texlive-latex-base)  
