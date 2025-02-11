@@ -128,7 +128,17 @@ sudo apt-get install texlive-science
 sudo apt-get install texlive-latex-extra
 ```
 
-## Nota 1
+🛑 **Hasta aquí se explica la configuración funcional de PreTeXt**, lo necesario para trabajar, por ejemplo, un libro de texto.
+
+---
+
+
+# Configuración de `XeLaTeX` en PreTeXt para el idioma español
+
+## Introducción
+
+Para que `XeLaTeX` maneje correctamente el **idioma español** en **PreTeXt**, es necesario asegurarse de que el paquete `polyglossia` esté correctamente configurado y de que se utilicen fuentes compatibles. 
+
 `Polyglossia` es la alternativa a babel para `XeLaTeX` y maneja correctamente la separación de palabras en español
 Para usar `XeLaTeX` es necesario instalar además de los Paquetes Básicos:
 
@@ -137,38 +147,93 @@ sudo apt install texlive-xetex
 sudo apt install texlive-xetex texlive-lang-spanish
 ```
 
-## Nota 2
 Verifica que `polyglossia` esté instalado ejecutando el siguiente comando:
 
 ```bash
 kpsewhich polyglossia.sty
 ```
 
-## Nota 3
-Para que `XeLaTeX` maneje correctamente el idioma español, debes asegurarte de que `polyglossia` esté correctamente configurado.
-En el archivo `main.tex` generado por **PreTeXt** y busca la sección donde se incluyen los paquetes. Justo después de `\documentclass{book}`, agrega o modifica las siguientes líneas:
+Luego de instalar `polyglossia`, se utiliza añadiendo las siguientes configuraciones en **`main.ptx`**, específicamente dentro de la sección `<docinfo>`. 
+
+Es importante recordar que:
+- **Para usar `pdflatex`**, estas líneas deben **comentarse** y el documento se compila con:
+  ```bash
+  pretext build pdf
+
+- **Para usar `XeLaTeX `, estas líneas deben descomentarse y el documento se compila con:
+  ```bash
+  pretext build print
+
 
 ```bash
-\usepackage{polyglossia}  % Activa soporte de idiomas en XeLaTeX
-\setmainlanguage{spanish}  % Define el idioma principal como español
+    
+<!-- Para usar estas fuentes, ejecuta "pretext build print" para compilar con XeLaTeX -->
 
-% Configurar fuentes con fontspec (Solo funciona con XeLaTeX o LuaLaTeX)
-\usepackage{fontspec}  
-\setmainfont[
-    Path=/usr/share/fonts/opentype/cabin/,  % Ruta donde está la fuente
-    Extension=.otf,  % Tipo de archivo de la fuente
-    UprightFont=*-Regular,  
-    BoldFont=*-Bold,
-    ItalicFont=*-Italic,
-    BoldItalicFont=*-BoldItalic
-]{Cabin}
+<latex-image-preamble>
 
-% Evitar errores de separación de palabras (puedes agregar más si es necesario)
-\hyphenation{re-pú-blica in-de-pen-den-cia Li-ber-ta-dor es-pa-ñol}
+    <!-- Cargar TikZ para gráficos -->
+    \usepackage{tikz}
 
-% Asegurar que XeLaTeX interprete bien los acentos y caracteres especiales
-\defaultfontfeatures{Ligatures=TeX}
+    <!-- Configuración de idioma con polyglossia -->
+    \usepackage{polyglossia}
+    \setmainlanguage{spanish}
+    \setotherlanguage{english}
+
+    <!-- Uso de fontspec para definir fuentes -->
+    \usepackage{fontspec}
+
+    <!-- Configurar la fuente principal (serif) -->
+    \setmainfont[
+        Path=/usr/share/fonts/opentype/cabin/,
+        Extension=.otf,
+        UprightFont=*-Regular,
+        BoldFont=*-Bold,
+        ItalicFont=*-Italic,
+        BoldItalicFont=*-BoldItalic
+    ]{Cabin}
+
+    <!-- Configurar la fuente para títulos y secciones -->
+    \setsansfont[
+        Path=/usr/share/fonts/truetype/lato/,
+        Extension=.ttf,
+        UprightFont=Lato-Medium,
+        BoldFont=Lato-Bold,
+        ItalicFont=Lato-Italic,
+        BoldItalicFont=Lato-BoldItalic
+    ]{Lato}
+
+    <!-- Configurar la fuente monoespaciada correctamente -->
+    \setmonofont[
+        Path=/usr/share/fonts/truetype/dejavu/,
+        Extension=.ttf,
+        UprightFont=DejaVuSansMono,
+        BoldFont=DejaVuSansMono-Bold,
+        ItalicFont=DejaVuSansMono-Oblique,
+        BoldItalicFont=DejaVuSansMono-BoldOblique
+    ]{DejaVu Sans Mono}
+
+    <!-- Asegurar codificación UTF-8 -->
+    \defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
+
+    <!-- Corrección de nombres de capítulos y secciones en español -->
+    \renewcommand{\chaptername}{Capítulo}
+    \renewcommand{\contentsname}{Índice}
+    \renewcommand{\figurename}{Figura}
+    \renewcommand{\tablename}{Tabla}
+
+</latex-image-preamble>
 ```
+
+> ⚠ **Advertencia**  
+> Antes de compilar con `XeLaTeX`, verifica que las fuentes necesarias (de tu preferencia) están instaladas en tu sistema ejecutando los siguientes comandos:
+>
+> ```bash
+> fc-list | grep "Cabin"
+> fc-list | grep "Lato"
+> fc-list | grep "DejaVu"
+> ```
+>
+> Si alguna de estas fuentes no aparece en la lista, es posible que necesites instalarlas manualmente o especificar una ruta correcta en la configuración de `fontspec`.
 
 
 ### Recursos Útiles:
