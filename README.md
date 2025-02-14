@@ -28,6 +28,7 @@ Esta es una propuesta y ejemplo base con los requerimientos necesarios para edit
 sudo apt update
 sudo apt install python3.12-venv
 python3 -m venv --help
+```
 
 ### 1️⃣ **Entorno Virtual Python (opcional pero recomendado)**
 
