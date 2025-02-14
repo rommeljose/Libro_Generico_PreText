@@ -20,12 +20,19 @@ Esta es una propuesta y ejemplo base con los requerimientos necesarios para edit
 
 ---
 
-## 🛠️ **Instalación de PreTeXt en Ubuntu o Codespaces**
+## 🛠️ **Instalación de PreTeXt en Ubuntu, WSL o Codespaces**
+
+### 0️⃣ **Actualiza el índice de paquetes:**
+
+```bash
+sudo apt update
+sudo apt install python3.12-venv
+python3 -m venv --help
 
 ### 1️⃣ **Entorno Virtual Python (opcional pero recomendado)**
 
 ```bash
-python -m venv editorial
+python3 -m venv editorial
 source ./editorial/bin/activate
 ```
 
