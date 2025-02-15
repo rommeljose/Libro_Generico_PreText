@@ -67,18 +67,33 @@ cp ./.es-Es/es-ES.xml ~/.ptx/2.10.1/core/xsl/localizations/
 Puedes personalizar los logos modificando la plantilla `pretext-html` en la instalación local `~\.ptx\2.10.1\core\xsl`:
 
 ```xml
-<xsl:template name="mathjax-link">
-    <a class="mathjax-link" href="https://www.mathjax.org" title="MathJax">
-        <img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"/>
+<!-- Comentado por RJCG -->
+<!-- <xsl:template name="runestone-link">
+    <a class="runestone-link" href="https://runestone.academy" title="Runestone Academy">
+        <img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"/>
     </a>
+        </xsl:template> -->
+
+<xsl:template name="runestone-link">
+    <a class="runestone-link" href="https://efemeridescumana.blogspot.com/" title="Academia de GeoHistoria del Estado Sucre">        
+	<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_AGHES.png"  />  
+	</a>
+
 </xsl:template>
 ```
 
 ```xml
-<xsl:template name="runestone-link">
-    <a class="runestone-link" href="https://runestone.academy" title="Runestone Academy">
-        <img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"/>
+<!-- Modificado por RJCG -->
+<!-- <xsl:template name="mathjax-link">
+    <a class="mathjax-link" href="https://www.mathjax.org" title="MathJax">
+        <img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"/>
     </a>
+</xsl:template> -->
+
+<xsl:template name="mathjax-link">
+    <a class="mathjax-link" href="https://bit.ly/m/rommelcontreras" title="Pagina del Autor">
+    <img class="logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdLU0qim6ueyYXDBgN5FRxXwoJKswnW41aeXSUDbPpUDGOlo7kmlzOYNreYGPsX_fMRhXiAV-fwfy0zJUySgyXOP9QrEPI83CkvCejk6DhhBm2k5C_FxKv1pHpKYC0ResNGR5sQJ1mUiZC/s800/que_puede_hacer_un_fisico_trasparente.png"  />
+	</a>
 </xsl:template>
 ```
 
