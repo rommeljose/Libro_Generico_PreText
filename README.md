@@ -136,7 +136,28 @@ sudo apt-get install texlive-science
 sudo apt-get install texlive-latex-extra
 ```
 
-🛑 **Hasta aquí se explica la configuración funcional de PreTeXt**, lo necesario para trabajar, por ejemplo, un libro de texto.
+## 📊 **Actualizando a nuevas versiones de Pretext**
+
+### Actualiza la nueva versión, desde el entorno Virtual Python:
+```bash
+pip install pretext --upgrade
+```
+
+### Si no tiene `pip`, instalar con:
+```bash
+sudo apt install python3-pip
+```
+
+### Verificar la nueva instalación con:
+```bash
+pretext --version
+```
+
+> ⚠ **Recordatorio:**  
+> No olvidar realizar nuevamente los Ajustes Opcionales para personaliza Pretext.
+
+
+🛑 **Hasta aquí se explica la configuración funcional de [**PreTeXt**](https://pretextbook.org/)**, lo necesario para trabajar, por ejemplo, un libro de texto.
 
 ---
 
@@ -167,11 +188,12 @@ Es importante recordar que:
 - **Para usar `pdflatex`**, estas líneas deben **comentarse** y el documento se compila con:
   ```bash
   pretext build pdf
+  ```
 
 - **Para usar `XeLaTeX `, estas líneas deben descomentarse y el documento se compila con:
   ```bash
   pretext build print
-
+  ```
 
 ```bash
     
