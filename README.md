@@ -309,6 +309,17 @@ Es importante recordar que:
 
 ---
 
+## 📖 RELAX NG y PreTeXt
+### El vocabulario de PreTeXt se define mediante un esquema [**RELAX NG**](https://pretextbook.org/doc/guide/html/schema-relaxng.html), un lenguaje de validación para XML.
+
+Un esquema es un conjunto de patrones que describen cómo se pueden combinar los elementos de un lenguaje.
+
+- ✅ **Especifica** la estructura y contenido del documento.
+- 🔍 **Permite la validación** de documentos XML.
+- ✍️ **Facilita la edición y conversión**, proporcionando una guía clara sobre elementos y atributos permitidos.
+
+
+
 ## 📚 **Principios de PreTeXt**
 
 - Legible y escribible por humanos.  
