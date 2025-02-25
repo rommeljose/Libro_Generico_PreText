@@ -335,7 +335,7 @@ Un esquema es un conjunto de patrones que describen cómo se pueden combinar los
 
 - [Documentación de PreTeXt](https://pretextbook.org/doc/guide/html/index.html)
 - [Repositorio de PreTeXt en GitHub](https://github.com/PreTeXtBook)
-
+- [RELAX NG: A Simpler Schema Language for XML](https://books.xmlschemata.org/relaxng/relax-CHP-2.html)
 ---
 
 ## 🤝 **Contribuciones**
