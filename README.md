@@ -7,7 +7,7 @@ Esta es una propuesta y ejemplo base con los requerimientos necesarios para edit
 👉 **Ejemplo en producción:** [Libro Web](https://rommeljose.github.io/proyectos_genericos_pretext/titulo-libro.html)
 
 <a href="https://rommeljose.github.io/proyectos_genericos_pretext/titulo-libro.html">
-    <img src=".es-Es/ejemplo_libro.png" alt="Ejemplo de la salida genérica de las fuentes suministradas" width="600"/>
+    <img src="assets/imagenes/caratula.png" alt="Ejemplo de la salida genérica de las fuentes suministradas" width="200"/>
 </a>
 
 
@@ -137,6 +137,28 @@ pretext view web
 ```bash
 pretext deploy
 ```
+
+📌 Nota:
+Para generar salidas en otros formatos, en el manifiesto del proyecto [`project.ptx`](https://pretextbook.org/doc/guide/html/epub-5.html#epub-5-4) deben declararse las referencias sobre cómo y con qué construir esos formatos.
+Ejemplo:
+
+```bash
+<target name="ebook">
+   <format>epub</format>
+   <source>source/main.ptx</source>
+   <publication>publication/publication.ptx</publication>
+   <output-dir>output/epub</output-dir>
+</target>
+
+<target name="kindle">
+  <format>kindle</format>
+  <source>source/main.ptx</source>
+  <publication>publication/publication.ptx</publication>
+  <output-dir>output/kindle</output-dir>
+</target>
+
+```
+EPUB es el formato estándar para libros electrónicos. Los libros en formato EPUB se pueden leer mediante aplicaciones en una variedad de plataformas. Los dispositivos Kindle de Amazon utilizan un formato propietario que se deriva de EPUB.
 
 ---
 
