@@ -22,7 +22,7 @@
     <!-- \usepackage{tikz} -->
     <!-- </latex-image-preamble> -->
 
-    <brandlogo url="https://blog.cenitlab.com/" source="./imagenes/logo_blog_autor.png" />
+    <brandlogo url="https://tecnologiacumanesa.blogspot.com/" source="./imagenes/logo_blog_autor.png" />
 
     <cross-references text="type-global" />
   </docinfo>
