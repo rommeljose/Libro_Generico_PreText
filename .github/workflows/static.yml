@@ -1,0 +1,54 @@
+# Workflow para desplegar contenido estático en gh-pages (sin Jekyll)
+name: Deploy static content to gh-pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: 🛠️ Preparar carpeta de salida
+        run: |
+          mkdir -p output/web
+          rsync -av --exclude='output' ./ output/web/
+          touch output/web/.nojekyll
+          ls -la output/web
+
+      - name: 🚀 Desplegar en la rama gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output/web
+          publish_branch: gh-pages
+          cname: ''
+          keep_files: false
+
+  cleanup:
+    runs-on: ubuntu-latest
+    needs: [deploy]  # 🔹 Solo depende del trabajo "deploy"
+    if: always()  # Se ejecuta siempre, incluso si "deploy" falla
+
+    steps:
+      - name: 🧹 Cleanup temporary files
+        run: |
+          if [ -d "output/stage/" ]; then
+            rm -rf output/stage/*
+            echo "Archivos temporales eliminados."
+          else
+            echo "No se encontraron archivos temporales para limpiar."
+          fi
