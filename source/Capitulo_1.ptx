@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ********************************************************************
+	Título del Libro: "TÍTULO DEL LIBRO"
+
+
+	Copyright (C) 2023   rommel Contreras ( rommeljose@gmail.com )
+
+	********************************************************************
+
+	Este es el archivo del "capitulo_1.xml" del libro
+
+	******************************************************************** -->
+
+<chapter xml:id="cap_01" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+	<title>TITULO DEL CAPÍTULO.</title>
+
+
+	<introduction xml:id="introduccion_a">
+
+		<blockquote>
+			<p>
+				<em>No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera,
+					simplemente porque es el dolor.</em>
+			</p>
+			<attribution>Cicero; año 45 antes de Jesús de Nazaret</attribution>
+		</blockquote>
+
+	</introduction>
+
+	<section xml:id="nombre-seccion">
+		<title>NOMBRE DE LA SECCIÓN.</title>
+
+		<introduction>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fringilla justo erat,
+				a tincidunt mauris congue quis. Vivamus quis massa erat. Suspendisse cursus vehicula
+				purus, in consectetur ante maximus sed. Cras in tristique nibh. Orci varius natoque
+				penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed lacinia, nunc
+				at viverra efficitur, odio arcu placerat dui, at finibus nibh odio at enim. Mauris
+				nibh purus, malesuada non faucibus ut, volutpat vel nibh. Curabitur et quam vel urna
+				tincidunt viverra in at turpis. Maecenas commodo vehicula enim, congue porta odio
+				pharetra nec. Aenean sed dignissim sapien. Morbi scelerisque commodo convallis.
+				Nulla facilisi. Nulla volutpat libero erat, consectetur mattis mauris vulputate
+				eget. Nunc efficitur velit sapien, sit amet venenatis tortor iaculis eget. Duis
+				scelerisque a risus in viverra.</p>
+		</introduction>
+
+		<p>Donec facilisis ex scelerisque molestie egestas. Nam interdum aliquet leo id feugiat.
+			Vestibulum arcu sem, blandit eget vehicula nec, iaculis nec dolor. Curabitur turpis mi,
+			scelerisque quis nibh congue, placerat hendrerit elit. Phasellus condimentum, leo sit
+			amet suscipit varius, tellus diam blandit dui, dapibus placerat nisl libero in nibh.
+			Suspendisse volutpat vitae sapien nec ultricies. Praesent vitae nisl consectetur,
+			accumsan velit non, volutpat turpis. Aenean eu ipsum mauris. Donec turpis justo, commodo
+			vel volutpat et, viverra vitae massa. Duis sit amet velit quis eros consectetur accumsan
+			vitae non ligula.</p>
+
+		<!-- #### Incuir una imagen  #####-->
+		<!-- <figure> -->
+		<!-- <caption>Texto de la imagen.</caption> -->
+		<!-- <image source="imagenes/nombre_de_la_imagen.jpg" width="95%" /> -->
+		<!-- </figure> -->
+
+	</section>
+
+</chapter>

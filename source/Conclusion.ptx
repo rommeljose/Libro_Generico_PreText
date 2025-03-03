@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ********************************************************************
+         Copyright 2023 Rommel Contreras
+ 
+	********************************************************************
+
+	Conclusión del libro                         
+
+	Copyright (C) 2023  Rommel Contreras ( rommeljose@gmail.com )
+
+	********************************************************************
+
+	Este es el archivo del "comclusion.ptx" del libro
+
+	******************************************************************** -->
+
+<chapter xml:id="Conclusion_b" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+	<!-- % RJCG, 1/4/2022 -->
+
+	<title>Título de la conclusión.</title>
+
+	<!-- <blockquote >
+		<attribution>Rommel J. Contreras Gaspar</attribution >
+	</blockquote >	-->
+
+	<introduction xml:id="introducion_c">
+
+		<blockquote>
+			<!--<title
+			>Nada puede ser temido</title >-->
+			<p>
+				<em>Como primer mártir de la libertad de América, Lope de a Aguirre está por
+					descubrir y rehabilitar.</em>
+				<xref ref="sender_0" />
+			</p>
+			<attribution>Ramón J. Sender.</attribution>
+		</blockquote>
+
+	</introduction>
+
+	<!-- <section > -->
+	<!-- <title>A manera de conclusión.</title> -->
+
+	<paragraphs xml:id="El_letargo_de_los_hombres">
+		<title>El letargo de los hombres y de la tierra</title>
+		<p>El general Aguirre («El Tirano», «La ira de Dios» y otros…) fue un fenoménico meteoro que
+			interrumpe el monótono de la medianía americana del siglo XVI, rasga el silencio, vedo y
+			letargo de poblamiento, que tenía el levante de la Tierra Firme y de sus alrededores.
+			Esas tierras ancestrales de indios, pensaron los frailes dominicos y franciscanos —y la
+			corona— reservarlas para el proyecto evangelizador de fray Pedro de Córdoba, el cual lo
+			sugiere al licenciado Bartolomé de las Casas en estos términos: <em>…que trabajase de
+			traer cien leguas en aquella tierra firme, con el pueblo de Cumaná, prohibido por el Rey
+			y con graves penas, que ningún español osase en ellas entrar ni conversar, sino que las
+			dejasen para donde predicasen solos los frailes franciscanos y dominicos, porque las
+			obras y escándalos de los españoles no los estorbasen</em><fn>Carta de fray Pedro de
+			Córdoba al licenciado Bartolomé de las Casas (aún no era fraile, pero ya era sacerdote),
+			para que diligenciase ante el Consejo de las Indias, un espacio reservado para la
+			predica <xref ref="casas_1" />.</fn>.</p>
+
+</chapter>
+
+						

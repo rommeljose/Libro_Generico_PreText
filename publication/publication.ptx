@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<publication>
+  <common>
+    <chunking level="1" />
+    <tableofcontents level="2" />
+    <exercise-inline statement="yes" hint="yes" answer="no" solution="no" />
+    <exercise-divisional statement="yes" hint="yes" answer="no" solution="no" />
+    <fillin textstyle="underline" mathstyle="shade" />
+    <!-- <watermark scale="0.5">DRAFT</watermark> -->
+  </common>
+
+  <source>
+    <directories external="../assets" generated="../generated-assets" />
+    <!-- <version include="videos labs"/> -->
+  </source>
+
+  <numbering>
+    <divisions part-structure="decorative" chapter-start="1" level="2" />
+    <blocks level="2" />
+    <projects level="2" />
+    <equations level="2" />
+    <footnotes level="2" />
+  </numbering>
+
+  <latex
+    print="yes"
+    sides="two"
+    open-odd="no"
+    pageref="yes"
+    font-size="12"
+    draft="no"
+    latex-style="dyslexic-font"
+  >
+
+    <page
+      right-alignment="flush"
+      bottom-alignment="ragged"
+      geometry="paperwidth=6in,paperheight=9in,total={5in,7.75in}"
+    />
+    <asymptote links="no" />
+    <worksheets formatted="yes" />
+    <cover
+      front="imagenes/caratula.png"
+      back="imagenes/contra_caratula.png"
+    />
+  </latex>
+
+  <html platform="web"  favicon="simple" >
+    <!-- <index-page ref="cap_01" /> -->
+ 
+    <knowl
+      theorem="no"
+      proof="yes"
+      definition="no"
+      example="yes"
+      example-solution="yes"
+      project="no"
+      task="no"
+      remark="no"
+      objectives="no"
+      outcomes="no"
+      figure="no"
+      table="no"
+      listing="no"
+      list="no"
+      exercise-inline="yes"
+      exercise-divisional="no"
+      exercise-worksheet="no"
+      exercise-readingquestion="no"
+    />
+    <!-- <css style="oscarlevin" colors="green_blue"/> -->
+    <css
+      style="oscarlevin"
+      colors="green_blue"
+      knowls="crc"
+      toc="crc"
+      banner="crc"
+      navbar="crc"
+    />
+
+
+    <search variant="default" />
+    <calculator model="none" activecode="none" />
+    <!-- <baseurl href="https://misitioejemplo.org" /> -->
+    <webwork
+      inline="dynamic"
+      divisional="static"
+      reading="static"
+      worksheet="static"
+      project="dynamic"
+    />
+  </html>
+
+  <epub>
+    <!-- The cover tag can have a @front attribute to specify a cover image. -->
+    <!-- <cover front="cover.jpg"> -->
+  </epub>
+
+  <!-- <webwork server="https://webwork-ptx.aimath.org"> -->
+</publication>
