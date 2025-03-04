@@ -6,7 +6,7 @@ Esta es una propuesta y ejemplo base con los requerimientos necesarios para edit
 
 👉 **Ejemplo en producción:** [Libro Web](https://rommeljose.github.io/Libro_Generico_PreText/titulo-libro.html)
 
-<a href="https://rommeljose.github.io/proyectos_genericos_pretext/titulo-libro.html">
+<a href="https://rommeljose.github.io/Libro_Generico_PreText/titulo-libro.html">
     <img src="assets/imagenes/caratula.png" alt="Ejemplo de la salida genérica de las fuentes suministradas" width="200"/>
 </a>
 
