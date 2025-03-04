@@ -4,7 +4,7 @@
 
 Esta es una propuesta y ejemplo base con los requerimientos necesarios para editar un libro, publicación o algún documento genérico, con [**PreTeXt**](https://pretextbook.org/). Usando [**Codespace de GitHub**](https://docs.github.com/en/codespaces) y asociándolo a este repositorio, permite tener en la nube de GitHub todo lo necesario para la edición y publicación en diversos formatos: **LaTeX**, **PDF**, **HTML**, **EPUB**, **Jupyter Notebook**, **Braille**, entre otros.
 
-👉 **Ejemplo en producción:** [Libro Web](https://rommeljose.github.io/proyectos_genericos_pretext/titulo-libro.html)
+👉 **Ejemplo en producción:** [Libro Web](https://rommeljose.github.io/Libro_Generico_PreText/titulo-libro.html)
 
 <a href="https://rommeljose.github.io/proyectos_genericos_pretext/titulo-libro.html">
     <img src="assets/imagenes/caratula.png" alt="Ejemplo de la salida genérica de las fuentes suministradas" width="200"/>
