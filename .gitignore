@@ -5,9 +5,17 @@
 # ensure this file is tracked
 !.gitignore
 
-# don't track unpublished builds or stage (note: Runestone uses `published`)
+# don't track unpublished builds or stage (note:  Runestone uses `published`)
 #output
 published
+
+# Excepto el archivo keep.txt
+!output/web/
+
+# Ignorar archivos PDF y EPUB solo en ciertas carpetas
+output/print/*.pdf
+output/Kindle/*.epub
+
 
 # don't track assets generated from source
 generated-assets

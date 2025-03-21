@@ -18,6 +18,65 @@
       \newcommand{\Null}{\operatorname{Null}}
     </macros>
 
+
+    <!-- Para usar estos fones debe descomentarse y ejecutar "pretext build print" para usar xelatex  -->
+    
+    <!-- <latex-image-preamble>
+    
+    \usepackage{tikz}
+
+        \usepackage{polyglossia}
+        \setmainlanguage{spanish}
+        \setotherlanguage{english}
+        \usepackage{fontspec}
+
+        \setmainfont[
+            Path=/usr/share/fonts/opentype/cabin/,
+            Extension=.otf,
+            UprightFont=*-Regular,
+            BoldFont=*-Bold,
+            ItalicFont=*-Italic,
+            BoldItalicFont=*-BoldItalic
+        ]{Cabin}
+
+
+      % Configurar el idioma principal como español
+      \setmainlanguage{spanish}
+
+      % Configurar la fuente principal (serif)
+
+      % Configurar la fuente para títulos y secciones
+      \setsansfont[
+      Path=/usr/share/fonts/truetype/lato/,
+      Extension=.ttf,
+      UprightFont=Lato-Medium,
+      BoldFont=Lato-Bold,
+      ItalicFont=Lato-Italic,
+      BoldItalicFont=Lato-BoldItalic
+      ]{Lato}
+
+      % Configurar la fuente monoespaciada correctamente
+      \setmonofont[
+      Path=/usr/share/fonts/truetype/dejavu/,
+      Extension=.ttf,
+      UprightFont=DejaVuSansMono,
+      BoldFont=DejaVuSansMono-Bold,
+      ItalicFont=DejaVuSansMono-Oblique,
+      BoldItalicFont=DejaVuSansMono-BoldOblique
+      ]{DejaVu Sans Mono}
+
+      % Asegurar codificación UTF-8
+      \defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
+
+      % Corrección de nombres de capítulos y secciones en español
+      \renewcommand{\chaptername}{Capítulo}
+      \renewcommand{\contentsname}{Índice}
+      \renewcommand{\figurename}{Figura}
+      \renewcommand{\tablename}{Tabla}
+
+        
+    </latex-image-preamble> -->
+
     <!-- <latex-image-preamble> -->
     <!-- \usepackage{tikz} -->
     <!-- </latex-image-preamble> -->

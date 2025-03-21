@@ -31,9 +31,9 @@ var ptx_lunr_docs = [
   "id": "reconocimiento",
   "level": "1",
   "url": "reconocimiento.html",
-  "type": "Agradecimentos",
+  "type": "Agradecimientos",
   "number": "",
-  "title": "Agradecimentos",
+  "title": "Agradecimientos",
   "body": " TEXTO DE LOS RECONOCIMIENTOS  "
 },
 {
@@ -58,7 +58,7 @@ var ptx_lunr_docs = [
   "id": "presentacion-2",
   "level": "2",
   "url": "presentacion.html#presentacion-2",
-  "type": "Párrafo (with a defined term)",
+  "type": "párrafo (with a defined term)",
   "number": "",
   "title": "",
   "body": "Nombre de Autor "
