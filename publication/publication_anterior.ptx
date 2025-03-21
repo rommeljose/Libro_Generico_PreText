@@ -6,7 +6,6 @@
     <tableofcontents level="2" />
     <exercise-inline statement="yes" hint="yes" answer="no" solution="no" />
     <exercise-divisional statement="yes" hint="yes" answer="no" solution="no" />
-    <!-- En texto relleno:  underline, dotted, shade, dashed, solid y blank -->
     <fillin textstyle="underline" mathstyle="shade" />
     <!-- <watermark scale="0.5">DRAFT</watermark> -->
   </common>
@@ -20,45 +19,36 @@
     <divisions part-structure="decorative" chapter-start="1" level="2" />
     <blocks level="2" />
     <projects level="2" />
-    <equations level="2" />    
-    <footnotes level="0"/>
-    <!-- defaults for a book with decorative parts -->
-    <!-- <divisions part-structure="decorative" /> -->
+    <equations level="2" />
+    <footnotes level="2" />
   </numbering>
 
+  <latex
+    print="yes"
+    sides="two"
+    open-odd="no"
+    pageref="yes"
+    font-size="12"
+    draft="no"
+    latex-style="dyslexic-font"
+  >
 
-  <!-- para la versión online se debe cambiar print y pageref  -->
-  <latex print="yes" sides="two" font-size="12" draft="no" pageref="yes">
-    <!-- Control text justification and bottom page behavior: -->
-    <page right-alignment="flush" bottom-alignment="ragged" />
-
-    <page>
-      <!-- <geometry>a4paper,total={16cm,25cm}</geometry> -->
-      <geometry>paperwidth=6in,paperheight=9in,total={5in,7.75in}</geometry>
-    </page>
-
-
-    <!-- The asymptote/@links set to "yes" would produce  -->
-    <!-- links the html version of asymptote graphics.    -->
+    <page
+      right-alignment="flush"
+      bottom-alignment="ragged"
+      geometry="paperwidth=6in,paperheight=9in,total={5in,7.75in}"
+    />
     <asymptote links="no" />
-
-    <!-- Set @formatted to "no" to remove formatting on worksheets: -->
     <worksheets formatted="yes" />
-
-    <!-- Portada y Contraportada -->
-    <!-- <cover
-      front="imagenes/portada.png"
-      back="imagenes/contraportada.png"
-    /> -->
-
+    <cover
+      front="imagenes/caratula.png"
+      back="imagenes/contra_caratula.png"
+    />
   </latex>
-
-
 
   <html platform="web"  favicon="simple" >
     <!-- <index-page ref="cap_01" /> -->
-
-    <!-- yes presenta el objeto contraido en el html con una flecha que indica abrir -->
+ 
     <knowl
       theorem="no"
       proof="yes"
@@ -89,16 +79,23 @@
       navbar="crc"
     />
 
-    <!-- Google Analytics, utilice el correspondiente -->
-    <analytics google-gst="G-xxxxx" />
 
     <search variant="default" />
-
     <calculator model="none" activecode="none" />
-
     <!-- <baseurl href="https://misitioejemplo.org" /> -->
-    <baseurl href="https://rommeljose.github.io/Libro_Generico_PreText" />
+    <webwork
+      inline="dynamic"
+      divisional="static"
+      reading="static"
+      worksheet="static"
+      project="dynamic"
+    />
   </html>
 
+  <epub>
+    <!-- The cover tag can have a @front attribute to specify a cover image. -->
+    <!-- <cover front="cover.jpg"> -->
+  </epub>
 
+  <!-- <webwork server="https://webwork-ptx.aimath.org"> -->
 </publication>
