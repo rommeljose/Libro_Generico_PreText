@@ -14,7 +14,8 @@ published
 
 # Ignorar archivos PDF y EPUB solo en ciertas carpetas
 output/print/*.pdf
-output/Kindle/*.epub
+output/print2/*.pdf
+output/kindle/*.epub
 
 
 # don't track assets generated from source
