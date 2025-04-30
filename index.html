@@ -1,21 +1,425 @@
 <!DOCTYPE html>
-<html>
-<!--********************************************-->
-<!--*       Generated from PreTeXt source      *-->
-<!--*       on 2025-04-29T18:02:20-04:00       *-->
-<!--*   A recent stable commit (2022-07-01):   *-->
-<!--* 6c761d3dba23af92cba35001c852aac04ae99a5f *-->
-<!--*                                          *-->
-<!--*         https://pretextbook.org          *-->
-<!--*                                          *-->
-<!--********************************************-->
-<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="refresh" content="0; URL='frontmatter.html'">
-<meta property="og:type" content="book">
-<meta property="og:image" content="https://rommeljose.github.io/Libro_Generico_PreText/external/./imagenes/logo_blog_autor.png">
-<meta property="book:title" content="TÍTULO DEL LIBRO">
-<meta property="book:author" content="NOMBRE DEL AUTOR">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual PreTeXt</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; line-height: 1.6; background: #fff; color: #333; }
+        code { background: #f4f4f4; padding: 0.2em 0.4em; border-radius: 4px; }
+        pre { background: #f4f4f4; padding: 1em; overflow: auto; border-left: 5px solid #ccc; }
+        h1, h2, h3 { color: #2c3e50; }
+        a { color: #2980b9; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        img { max-width: 100%; height: auto; }
+    </style>
 </head>
-<body></body>
+<body>
+<h2 id="pretext">🚀 PreTeXt:</h2>
+
+<p>El lenguaje de marcado y el sistema de preparación de documentos para crear la próxima generación de libros de texto. Y la generación posterior a esta.</p>
+
+<h3 id="proyecto-generico-para-pretext-cli">📚 <strong>Proyecto Genérico para PreTeXt-CLI 🚀✨</strong></h3>
+
+<p>Esta es una propuesta y ejemplo base con los requerimientos necesarios para editar un libro, publicación o algún documento genérico, con <a href="https://pretextbook.org/"><strong>PreTeXt</strong></a>. Usando <a href="https://docs.github.com/en/codespaces"><strong>Codespace de GitHub</strong></a> y asociándolo a este repositorio, permite tener en la nube de GitHub todo lo necesario para la edición y publicación en diversos formatos: <strong>LaTeX</strong>, <strong>PDF</strong>, <strong>HTML</strong>, <strong>EPUB</strong>, <strong>Jupyter Notebook</strong>, <strong>Braille</strong>, entre otros.</p>
+
+<p>👉 <strong>Ejemplo en producción:</strong> <a href="https://rommeljose.github.io/Libro_Generico_PreText/titulo-libro.html">Libro Web</a></p>
+
+<a href="https://rommeljose.github.io/Libro_Generico_PreText/titulo-libro.html">
+    <img src="assets/imagenes/caratula.png" alt="Ejemplo de la salida genérica de las fuentes suministradas" width="200"/>
+</a>
+
+<h2 id="que-es-pretext">🚀 <strong>¿Qué es PreTeXt?</strong></h2>
+
+<p><a href="https://pretextbook.org/"><strong>PreTeXt</strong></a> es un lenguaje de marcado semántico que permite estructurar documentos académicos y técnicos de manera lógica. Captura la estructura de libros de texto y trabajos de investigación y facilita su conversión a múltiples formatos.</p>
+
+<ul>
+<li><strong>Formato de archivo:</strong> <code>.ptx</code> o <code>.xml</code>.</li>
+<li><strong>Editor recomendado:</strong> <a href="https://code.visualstudio.com/"><strong>Visual Studio Code</strong></a> con complementos para PreTeXt.</li>
+</ul>
+
+<hr />
+
+<h2 id="instalacion-de-pretext-en-ubuntu-wsl-o-codespaces">🛠️ <strong>Instalación de PreTeXt en Ubuntu, WSL o Codespaces</strong></h2>
+
+<h3 id="0-actualiza-el-indice-de-paquetes">0️⃣ <strong>Actualiza el índice de paquetes:</strong></h3>
+
+<div class="codehilite">
+<pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3.12-venv
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>--help
+</code></pre>
+</div>
+
+<h3 id="1-entorno-virtual-python-opcional-pero-recomendado">1️⃣ <strong>Entorno Virtual Python (opcional pero recomendado)</strong></h3>
+
+<div class="codehilite">
+<pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>editorial
+<span class="nb">source</span><span class="w"> </span>./editorial/bin/activate
+</code></pre>
+</div>
+
+<blockquote>
+  <p>⚠️ <strong>Verifique si tiene Python instalado:</strong><br />
+  <code>$ python --version</code> o <code>$ python3 --version</code></p>
+</blockquote>
+
+<hr />
+
+<h3 id="2-instalar-pretext-cli">2️⃣ <strong>Instalar PreTeXt-CLI</strong></h3>
+
+<p>Al momento (21/3/2025), la versión oficial de Pretext es: 2.15.0</p>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pretext
+</code></pre>
+</div>
+
+<hr />
+
+<h3 id="3-configuracion-adicional-opcional">3️⃣ <strong>Configuración Adicional (Opcional)</strong></h3>
+
+<p>Modifique para castellanizar el resultado PDF. EPUB, KINDLE y WEB.</p>
+
+<p>Desde la raíz del repositorio:</p>
+
+<div class="codehilite">
+<pre><span></span><code>cp<span class="w"> </span>./otros_necesarios/es-ES.xml<span class="w"> </span>~/.ptx/2.10.1/core/xsl/localizations/
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="ajustes-opcionales-para-personalizar-los-iconos-en-la-parte-inferior-de-la-pagina-web">⚙️ <strong>Ajustes Opcionales para personalizar los Iconos en la parte inferior de la página Web</strong></h2>
+
+<p>Puedes personalizar los logos modificando la plantilla <code>pretext-html</code> en la instalación local <code>~\.ptx\2.10.1\core\xsl</code>:</p>
+
+<h3 id="personaliza-con-tu-logo-personal-comenta-las-siguientes-secciones-y-sustituye-con-el-codigo-adecuado">Personaliza con tu logo personal, comenta las siguientes secciones y sustituye con el código adecuado:</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="cm">&lt;!-- Comentado por RJCG --&gt;</span>
+<span class="cm">&lt;!-- &lt;xsl:template name=&quot;runestone-link&quot;&gt;</span>
+<span class="cm">    &lt;a class=&quot;runestone-link&quot; href=&quot;https://runestone.academy&quot; title=&quot;Runestone Academy&quot;&gt;</span>
+<span class="cm">        &lt;img class=&quot;logo&quot; src=&quot;https://runestone.academy/runestone/static/images/RAIcon_cropped.png&quot; alt=&quot;Runstone Academy logo&quot;/&gt;</span>
+<span class="cm">    &lt;/a&gt;</span>
+<span class="cm">&lt;/xsl:template&gt; --&gt;</span>
+
+
+<span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;runestone-link&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;a</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;runestone-link&quot;</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;https://efemeridescumana.blogspot.com/&quot;</span><span class="w"> </span><span class="na">title=</span><span class="s">&quot;Academia de GeoHistoria del Estado Sucre&quot;</span><span class="nt">&gt;</span><span class="w">        </span>
+<span class="w">    </span><span class="nt">&lt;img</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;logo&quot;</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://upload.wikimedia.org/wikipedia/commons/6/61/Logo_3_AGHES.jpg&quot;</span><span class="w">  </span><span class="nt">/&gt;</span><span class="w">  </span>
+<span class="w">    </span><span class="nt">&lt;/a&gt;</span>
+
+<span class="nt">&lt;/xsl:template&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="personaliza-con-el-logo-de-tu-institucion">Personaliza con el logo de tu Institución:</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="cm">&lt;!-- &lt;xsl:template name=&quot;mathjax-link&quot;&gt;</span>
+<span class="cm">    &lt;a class=&quot;mathjax-link&quot; href=&quot;https://www.mathjax.org&quot; title=&quot;MathJax&quot;&gt;</span>
+<span class="cm">        &lt;img class=&quot;logo&quot; src=&quot;https://www.mathjax.org/badge/badge-square-2.png&quot; alt=&quot;MathJax logo&quot;/&gt;</span>
+<span class="cm">    &lt;/a&gt;</span>
+<span class="cm">&lt;/xsl:template&gt; --&gt;</span>
+
+<span class="nt">&lt;xsl:template</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;mathjax-link&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;a</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;mathjax-link&quot;</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;https://bit.ly/m/rommelcontreras&quot;</span><span class="w"> </span><span class="na">title=</span><span class="s">&quot;Pagina del Autor&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;img</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;logo&quot;</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdLU0qim6ueyYXDBgN5FRxXwoJKswnW41aeXSUDbPpUDGOlo7kmlzOYNreYGPsX_fMRhXiAV-fwfy0zJUySgyXOP9QrEPI83CkvCejk6DhhBm2k5C_FxKv1pHpKYC0ResNGR5sQJ1mUiZC/s800/que_puede_hacer_un_fisico_trasparente.png&quot;</span><span class="w">  </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="estructura-del-proyecto">📂 <strong>Estructura del Proyecto</strong></h2>
+
+<pre><code>📦 libro-pretext-generico
+.
+├── .devcontainer.json
+├── .git
+├── .github
+├── .gitignore
+├── .vscode
+├── README.md
+├── project.ptx
+├── requirements.txt
+├── codechat_config.yaml
+├── assets
+├── output
+├── publication
+└── source
+</code></pre>
+
+<hr />
+
+<h2 id="comandos-basicos-de-pretext">📝 <strong>Comandos Básicos de PreTeXt</strong></h2>
+
+<h3 id="construir-el-libro-en-formato-html">➡️ <strong>Construir el libro en formato HTML:</strong></h3>
+
+<div class="codehilite">
+<pre><span></span><code>pretext<span class="w"> </span>build<span class="w"> </span>web
+</code></pre>
+</div>
+
+<h3 id="ver-el-libro-en-el-navegador">➡️ <strong>Ver el libro en el navegador:</strong></h3>
+
+<div class="codehilite">
+<pre><span></span><code>pretext<span class="w"> </span>view<span class="w"> </span>web
+</code></pre>
+</div>
+
+<h3 id="desplegar-en-github-pages">➡️ <strong>Desplegar en GitHub Pages:</strong></h3>
+
+<div class="codehilite">
+<pre><span></span><code>pretext<span class="w"> </span>deploy
+</code></pre>
+</div>
+
+<p>📌 Nota:
+Para generar salidas en otros formatos, en el manifiesto del proyecto <a href="https://pretextbook.org/doc/guide/html/epub-5.html#epub-5-4"><code>project.ptx</code></a> deben declararse las referencias sobre cómo y con qué construir esos formatos, a partir de Pretext 2.14.0. Verifique que el archivo <code>publication.ptx</code>, tenga la estructura recomendada
+Ejemplo del archivo <code>project.ptx</code>:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="cm">&lt;!-- This  file was automatically generated by PreTeXt 2.13.4. --&gt;</span>
+<span class="cm">&lt;!-- If you modify this file, PreTeXt will no longer automatically update it.--&gt;</span>
+
+<span class="cm">&lt;!-- This file, the project manifest, provides the overall configuration for your PreTeXt project. To edit the content of your document, open `source/main.ptx`. See https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest. --&gt;</span>
+<span class="nt">&lt;project</span><span class="w"> </span><span class="na">ptx-version=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;targets&gt;</span>
+<span class="w">    </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;web&quot;</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;html&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;print&quot;</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;pdf&quot;</span><span class="w">  </span><span class="na">latex-engine =</span><span class="w"> </span><span class="s">&quot;xelatex&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;print2&quot;</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;pdf&quot;</span><span class="w"> </span><span class="na">latex-engine =</span><span class="w"> </span><span class="s">&quot;pdflatex&quot;</span><span class="w"> </span><span class="na">output-filename=</span><span class="w"> </span><span class="s">&quot;main2.pdf&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;latex&quot;</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;latex&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;epub&quot;</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;epub&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;kindle&quot;</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;kindle&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;target</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;braille&quot;</span><span class="w"> </span><span class="na">format=</span><span class="s">&quot;braille&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+
+<span class="w">  </span><span class="nt">&lt;/targets&gt;</span>
+<span class="nt">&lt;/project&gt;</span>
+</code></pre>
+</div>
+
+<p>EPUB es el formato estándar para libros electrónicos. Los libros en formato EPUB se pueden leer mediante aplicaciones en una variedad de plataformas. Los dispositivos Kindle de Amazon utilizan un formato propietario que se deriva de EPUB.</p>
+
+<hr />
+
+<h2 id="dependencias-adicionales-para-latex">📊 <strong>Dependencias Adicionales para LaTeX</strong></h2>
+
+<h3 id="instalar-paquetes-basicos">Instalar Paquetes Básicos:</h3>
+
+<div class="codehilite">
+<pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive-latex-base
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive-fonts-recommended
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive-fonts-extra
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive-science
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive-latex-extra
+</code></pre>
+</div>
+
+<h2 id="actualizando-a-nuevas-versiones-de-pretext">📊 <strong>Actualizando a nuevas versiones de Pretext</strong></h2>
+
+<h3 id="siempre-es-conveniente-mantener-el-sistema-operativo-actualizado-mantener-actualiza-el-indice-de-paquetes">Siempre es conveniente mantener el sistema operativo actualizado, mantener <code>Actualiza el índice de paquetes</code>:</h3>
+
+<div class="codehilite">
+<pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre>
+</div>
+
+<h3 id="actualiza-la-nueva-version-desde-el-entorno-virtual-python">Actualiza la nueva versión, desde el entorno Virtual Python:</h3>
+
+<div class="codehilite">
+<pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pretext<span class="w"> </span>--upgrade
+</code></pre>
+</div>
+
+<h3 id="si-no-tiene-pip-instalar-con">Si no tiene <code>pip</code>, instalar con:</h3>
+
+<div class="codehilite">
+<pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-pip
+</code></pre>
+</div>
+
+<h3 id="verificar-la-nueva-instalacion-con">Verificar la nueva instalación con:</h3>
+
+<div class="codehilite">
+<pre><span></span><code>pretext<span class="w"> </span>--version
+</code></pre>
+</div>
+
+<blockquote>
+  <p>⚠ <strong>Recordatorio:</strong><br />
+  No olvidar realizar nuevamente los Ajustes Opcionales para personaliza Pretext.</p>
+</blockquote>
+
+<p>🛑 <strong>Hasta aquí se explica la configuración funcional de <a href="https://pretextbook.org/"></strong>PreTeXt<strong></a></strong>, lo necesario para trabajar, por ejemplo, un libro de texto.</p>
+
+<hr />
+
+<h1 id="configuracion-de-xelatex-en-pretext-para-el-idioma-espanol">Configuración de <code>XeLaTeX</code> en PreTeXt para el idioma español</h1>
+
+<h2 id="introduccion">Introducción</h2>
+
+<p>Para que <code>XeLaTeX</code> maneje correctamente el <strong>idioma español</strong> en <strong>PreTeXt</strong>, es necesario asegurarse de que el paquete <code>polyglossia</code> esté correctamente configurado y de que se utilicen fuentes compatibles. </p>
+
+<p><code>Polyglossia</code> es la alternativa a babel para <code>XeLaTeX</code> y maneja correctamente la separación de palabras en español
+Para usar <code>XeLaTeX</code> es necesario instalar además de los Paquetes Básicos:</p>
+
+<div class="codehilite">
+<pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>texlive-xetex
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>texlive-xetex<span class="w"> </span>texlive-lang-spanish
+</code></pre>
+</div>
+
+<p>Verifica que <code>polyglossia</code> esté instalado ejecutando el siguiente comando:</p>
+
+<div class="codehilite">
+<pre><span></span><code>kpsewhich<span class="w"> </span>polyglossia.sty
+</code></pre>
+</div>
+
+<p>Luego de instalar <code>polyglossia</code>, se utiliza añadiendo las siguientes configuraciones en <strong><code>main.ptx</code></strong>, específicamente dentro de la sección <code>&lt;docinfo&gt;</code>. </p>
+
+<div class="codehilite">
+<pre><span></span><code>&lt;!--<span class="w"> </span>Para<span class="w"> </span>usar<span class="w"> </span>estas<span class="w"> </span>fuentes,<span class="w"> </span>ejecuta<span class="w"> </span><span class="s2">&quot;pretext build print&quot;</span><span class="w"> </span>para<span class="w"> </span>compilar<span class="w"> </span>con<span class="w"> </span>XeLaTeX<span class="w"> </span>--&gt;
+
+&lt;latex-image-preamble&gt;
+
+<span class="w">    </span>&lt;!--<span class="w"> </span>Cargar<span class="w"> </span>TikZ<span class="w"> </span>para<span class="w"> </span>gráficos<span class="w"> </span>--&gt;
+<span class="w">    </span><span class="se">\u</span>sepackage<span class="o">{</span>tikz<span class="o">}</span>
+
+<span class="w">    </span>&lt;!--<span class="w"> </span>Configuración<span class="w"> </span>de<span class="w"> </span>idioma<span class="w"> </span>con<span class="w"> </span>polyglossia<span class="w"> </span>--&gt;
+<span class="w">    </span><span class="se">\u</span>sepackage<span class="o">{</span>polyglossia<span class="o">}</span>
+<span class="w">    </span><span class="se">\s</span>etmainlanguage<span class="o">{</span>spanish<span class="o">}</span>
+<span class="w">    </span><span class="se">\s</span>etotherlanguage<span class="o">{</span>english<span class="o">}</span>
+
+<span class="w">    </span>&lt;!--<span class="w"> </span>Uso<span class="w"> </span>de<span class="w"> </span>fontspec<span class="w"> </span>para<span class="w"> </span>definir<span class="w"> </span>fuentes<span class="w"> </span>--&gt;
+<span class="w">    </span><span class="se">\u</span>sepackage<span class="o">{</span>fontspec<span class="o">}</span>
+
+<span class="w">    </span>&lt;!--<span class="w"> </span>Configurar<span class="w"> </span>la<span class="w"> </span>fuente<span class="w"> </span>principal<span class="w"> </span><span class="o">(</span>serif<span class="o">)</span><span class="w"> </span>--&gt;
+<span class="w">    </span><span class="se">\s</span>etmainfont<span class="o">[</span>
+<span class="w">        </span><span class="nv">Path</span><span class="o">=</span>/usr/share/fonts/opentype/cabin/,
+<span class="w">        </span><span class="nv">Extension</span><span class="o">=</span>.otf,
+<span class="w">        </span><span class="nv">UprightFont</span><span class="o">=</span>*-Regular,
+<span class="w">        </span><span class="nv">BoldFont</span><span class="o">=</span>*-Bold,
+<span class="w">        </span><span class="nv">ItalicFont</span><span class="o">=</span>*-Italic,
+<span class="w">        </span><span class="nv">BoldItalicFont</span><span class="o">=</span>*-BoldItalic
+<span class="w">    </span><span class="o">]{</span>Cabin<span class="o">}</span>
+
+<span class="w">    </span>&lt;!--<span class="w"> </span>Configurar<span class="w"> </span>la<span class="w"> </span>fuente<span class="w"> </span>para<span class="w"> </span>títulos<span class="w"> </span>y<span class="w"> </span>secciones<span class="w"> </span>--&gt;
+<span class="w">    </span><span class="se">\s</span>etsansfont<span class="o">[</span>
+<span class="w">        </span><span class="nv">Path</span><span class="o">=</span>/usr/share/fonts/truetype/lato/,
+<span class="w">        </span><span class="nv">Extension</span><span class="o">=</span>.ttf,
+<span class="w">        </span><span class="nv">UprightFont</span><span class="o">=</span>Lato-Medium,
+<span class="w">        </span><span class="nv">BoldFont</span><span class="o">=</span>Lato-Bold,
+<span class="w">        </span><span class="nv">ItalicFont</span><span class="o">=</span>Lato-Italic,
+<span class="w">        </span><span class="nv">BoldItalicFont</span><span class="o">=</span>Lato-BoldItalic
+<span class="w">    </span><span class="o">]{</span>Lato<span class="o">}</span>
+
+<span class="w">    </span>&lt;!--<span class="w"> </span>Configurar<span class="w"> </span>la<span class="w"> </span>fuente<span class="w"> </span>monoespaciada<span class="w"> </span>correctamente<span class="w"> </span>--&gt;
+<span class="w">    </span><span class="se">\s</span>etmonofont<span class="o">[</span>
+<span class="w">        </span><span class="nv">Path</span><span class="o">=</span>/usr/share/fonts/truetype/dejavu/,
+<span class="w">        </span><span class="nv">Extension</span><span class="o">=</span>.ttf,
+<span class="w">        </span><span class="nv">UprightFont</span><span class="o">=</span>DejaVuSansMono,
+<span class="w">        </span><span class="nv">BoldFont</span><span class="o">=</span>DejaVuSansMono-Bold,
+<span class="w">        </span><span class="nv">ItalicFont</span><span class="o">=</span>DejaVuSansMono-Oblique,
+<span class="w">        </span><span class="nv">BoldItalicFont</span><span class="o">=</span>DejaVuSansMono-BoldOblique
+<span class="w">    </span><span class="o">]{</span>DejaVu<span class="w"> </span>Sans<span class="w"> </span>Mono<span class="o">}</span>
+
+<span class="w">    </span>&lt;!--<span class="w"> </span>Asegurar<span class="w"> </span>codificación<span class="w"> </span>UTF-8<span class="w"> </span>--&gt;
+<span class="w">    </span><span class="se">\d</span>efaultfontfeatures<span class="o">{</span><span class="nv">Ligatures</span><span class="o">=</span>TeX,Mapping<span class="o">=</span>tex-text<span class="o">}</span>
+
+<span class="w">    </span>&lt;!--<span class="w"> </span>Corrección<span class="w"> </span>de<span class="w"> </span>nombres<span class="w"> </span>de<span class="w"> </span>capítulos<span class="w"> </span>y<span class="w"> </span>secciones<span class="w"> </span>en<span class="w"> </span>español<span class="w"> </span>--&gt;
+<span class="w">    </span><span class="se">\r</span>enewcommand<span class="o">{</span><span class="se">\c</span>haptername<span class="o">}{</span>Capítulo<span class="o">}</span>
+<span class="w">    </span><span class="se">\r</span>enewcommand<span class="o">{</span><span class="se">\c</span>ontentsname<span class="o">}{</span>Índice<span class="o">}</span>
+<span class="w">    </span><span class="se">\r</span>enewcommand<span class="o">{</span><span class="se">\f</span>igurename<span class="o">}{</span>Figura<span class="o">}</span>
+<span class="w">    </span><span class="se">\r</span>enewcommand<span class="o">{</span><span class="se">\t</span>ablename<span class="o">}{</span>Tabla<span class="o">}</span>
+
+&lt;/latex-image-preamble&gt;
+</code></pre>
+</div>
+
+<blockquote>
+  <p>⚠ <strong>Advertencia</strong><br />
+  Antes de compilar con <code>XeLaTeX</code>, verifica que las fuentes necesarias (de tu preferencia) están instaladas en tu sistema ejecutando los siguientes comandos:</p>
+  
+  <div class="codehilite">
+<pre><span></span><code>fc-list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Cabin&quot;</span>
+fc-list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Lato&quot;</span>
+fc-list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;DejaVu&quot;</span>
+</code></pre>
+  </div>
+  
+  <p>Si alguna de estas fuentes no aparece en la lista, es posible que necesites instalarlas manualmente o especificar una ruta correcta en la configuración de <code>fontspec</code>.</p>
+</blockquote>
+
+<blockquote>
+  <p>📌 Nota: El uso de otros fones de los muchos disponibles en <code>XeLaTeX</code>, se puede hacer quitando el comentario del ejemplo sugerido en el archivo <code>main.ptx</code>.</p>
+</blockquote>
+
+<h3 id="recursos-utiles">Recursos Útiles:</h3>
+
+<ul>
+<li><a href="https://zoomadmin.com/HowToInstall/UbuntuPackage/texlive-latex-base"><strong>How To Install "texlive-latex-base" Package on Ubuntu</strong></a>  </li>
+<li><a href="https://mecatronicauaslp.wordpress.com/2013/07/25/latex-instalacion-texlive-texmaker-ubuntu/"><strong>LaTeX: instalación TeXLive + Texmaker (Ubuntu)</strong></a></li>
+</ul>
+
+<hr />
+
+<h2 id="relax-ng-y-pretext">📖 RELAX NG y PreTeXt</h2>
+
+<h3 id="el-vocabulario-de-pretext-se-define-mediante-un-esquema-relax-nghttpspretextbookorgdocguidehtmlschema-relaxnghtml-un-lenguaje-de-validacion-para-xml">El vocabulario de PreTeXt se define mediante un esquema <a href="https://pretextbook.org/doc/guide/html/schema-relaxng.html"><strong>RELAX NG</strong></a>, un lenguaje de validación para XML.</h3>
+
+<p>Un esquema es un conjunto de patrones que describen cómo se pueden combinar los elementos de un lenguaje.</p>
+
+<ul>
+<li>✅ <strong>Especifica</strong> la estructura y contenido del documento.</li>
+<li>🔍 <strong>Permite la validación</strong> de documentos XML.</li>
+<li>✍️ <strong>Facilita la edición y conversión</strong>, proporcionando una guía clara sobre elementos y atributos permitidos.</li>
+</ul>
+
+<h2 id="principios-de-pretext">📚 <strong>Principios de PreTeXt</strong></h2>
+
+<ul>
+<li>Legible y escribible por humanos.  </li>
+<li>Compatible con múltiples formatos.  </li>
+<li>Respetuoso de las buenas prácticas editoriales.  </li>
+<li>Gratuito y de código abierto.  </li>
+<li>Enfocado en la accesibilidad y la experiencia del usuario.  </li>
+<li>Capacidad de exportación a formatos como LaTeX, HTML, PDF, EPUB, entre otros.</li>
+</ul>
+
+<hr />
+
+<h2 id="documentacion-oficial">🎓 <strong>Documentación Oficial</strong></h2>
+
+<ul>
+<li><a href="https://pretextbook.org/doc/guide/html/index.html">Documentación de PreTeXt</a></li>
+<li><a href="https://github.com/PreTeXtBook">Repositorio de PreTeXt en GitHub</a>
+<h2 id="-relax-ng-a-simpler-schema-language-for-xmlhttpsbooksxmlschemataorgrelaxngrelax-chp-2html">- <a href="https://books.xmlschemata.org/relaxng/relax-CHP-2.html">RELAX NG: A Simpler Schema Language for XML</a></h2></li>
+</ul>
+
+<h2 id="contribuciones">🤝 <strong>Contribuciones</strong></h2>
+
+<p>¡Las contribuciones son bienvenidas! Puedes abrir un <strong>issue</strong> o enviar un <strong>pull request</strong>.</p>
+
+<hr />
+
+<h2 id="licencia">📝 <strong>Licencia</strong></h2>
+
+<p>Este proyecto está bajo la licencia <strong>MIT</strong>. Consulta el archivo <code>LICENSE</code> para más detalles.</p>
+
+<hr />
+
+<h2 id="unete-a-la-comunidad-pretext">🚀 <strong>¡Únete a la Comunidad PreTeXt!</strong></h2>
+
+<ul>
+<li><a href="https://groups.google.com/forum/#!forum/pretext-support">Foro de PreTeXt</a></li>
+<li><a href="https://pretext.zulipchat.com/">Chat en Zulip</a></li>
+</ul>
+
+<hr />
+
+</body>
 </html>

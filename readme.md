@@ -1,8 +1,3 @@
----
-layout: default
-title:  Página de README
----
-
 ## 🚀 PreTeXt:
 
 El lenguaje de marcado y el sistema de preparación de documentos para crear la próxima generación de libros de texto. Y la generación posterior a esta.
