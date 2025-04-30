@@ -1,6 +1,6 @@
 ---
-markdown: kramdown
-theme: minima
+layout: default
+title:  Página de README
 ---
 
 ## 🚀 PreTeXt:
